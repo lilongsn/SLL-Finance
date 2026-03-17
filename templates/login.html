@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="mt-20 px-4">
+    <h2 class="text-3xl font-black mb-2">欢迎回来</h2>
+    <p class="text-gray-400 text-sm mb-10">用简单的节奏，理清生活的账单</p>
+    <form method="POST" class="space-y-6">
+        {{ form.hidden_tag() }}
+        {{ form.username(class="w-full bg-white border-none p-4 rounded-2xl shadow-sm outline-none", placeholder="用户名") }}
+        {{ form.password(class="w-full bg-white border-none p-4 rounded-2xl shadow-sm outline-none", placeholder="密码") }}
+        {{ form.submit(class="w-full bg-indigo-600 text-white p-4 rounded-2xl font-bold") }}
+    </form>
+    <p class="text-center mt-8 text-xs text-gray-400">还没有账号？<a href="{{ url_for('register') }}" class="text-indigo-600 font-bold">立即加入</a></p>
+</div>
+{% endblock %}

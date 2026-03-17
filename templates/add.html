@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="bg-white rounded-3xl p-8 shadow-sm">
+    <h2 class="text-2xl font-black mb-8">新增账目</h2>
+    <form method="POST" class="space-y-8">
+        {{ form.hidden_tag() }}
+        <div>
+            <label class="text-[10px] text-gray-400 uppercase font-bold mb-2 block">交易金额</label>
+            {{ form.amount(class="w-full text-5xl font-black border-none outline-none text-indigo-600", placeholder="0.00") }}
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            {{ form.type(class="bg-gray-50 border-none p-4 rounded-2xl outline-none text-sm") }}
+            {{ form.note(class="bg-gray-50 border-none p-4 rounded-2xl outline-none text-sm", placeholder="备注...") }}
+        </div>
+        {{ form.submit(class="w-full bg-indigo-600 text-white p-5 rounded-3xl font-bold shadow-lg shadow-indigo-100") }}
+    </form>
+    <a href="{{ url_for('index') }}" class="block text-center mt-6 text-xs text-gray-300">取消返回</a>
+</div>
+{% endblock %}
